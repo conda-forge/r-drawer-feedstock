@@ -1,4 +1,4 @@
-{% set version = '0.1.0' %}
+{% set version = "0.2.0.0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,10 +11,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/drawer_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/drawer/drawer_{{ version }}.tar.gz
-  sha256: 9c04e33ae4ca75348ae174bafacb4fa91c18dcaccc131b87c58b37a444411fc1
+  sha256: f3be1ad0164022a67e21bfde58db178854a6127fdeaeb2710ad59d0126965d5a
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -51,17 +51,12 @@ test:
 about:
   home: https://github.com/lz100/drawer
   license: GPL-3.0-or-later
-  summary: An interactive image editing tool that can be added as part of the HTML in Shiny,
-    R markdown or any type of HTML document. Often times, plots, photos are embedded
-    in the web application/file. 'drawer' can take screenshots of these image-like elements,
-    or any part of the HTML document and send to an image editing space called 'canvas'
-    to allow users immediately edit the screenshot(s) within the same document. Users
-    can quickly combine, compare different screenshots, upload their own images and
-    maybe make a scientific figure.
+  summary: An interactive image editing tool that can be added as part of the HTML in Shiny, R markdown or any type of HTML document. Often times, plots, photos are embedded in the web application/file. 'drawer' can take screenshots of these image-like elements, or any part of the HTML document and send to an image editing
+    space called 'canvas' to allow users immediately edit the screenshot(s) within the same document. Users can quickly combine, compare different screenshots, upload their own images and maybe make a scientific figure.
 
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
