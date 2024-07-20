@@ -1,7 +1,6 @@
 {% set version = "0.2.0.1" %}
 
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-drawer
@@ -14,8 +13,7 @@ source:
   sha256: 05c2ea05c7c8780e30fa6f036033894b162b41917ce0e00be210dc692605bc98
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   noarch: generic
   rpaths:
     - lib/R/lib/
